@@ -1,0 +1,672 @@
+<!doctype html>
+<html>
+<head>
+    <!-- Web Page Tittle -->
+     <title>Rutvik Bhatti</title>
+    <!-- Web Page Tittle -->
+
+    <!-- Web Page Icon -->
+     <link rel="icon" href="/Asstes/icon.png">
+    <!-- Web Page Icon -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CSS JS CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS JS CDN -->
+
+    <!-- Data AOS CSS CDN For the animation -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Data AOS CSS CDN For the animation -->
+</head>
+
+<!-- Some CSS for costomize classes -->
+ <style>
+    /* link font family using the css */
+    /* This font family we use in the webpage for the  paragraph and some detailed information */
+     @font-face {
+        font-family: 'josefin_sans';
+        src: url(/Font/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+     }
+    /* link font family using the css */
+
+    /* Apply the font family to the whole webpage */
+    /* apply font family using the universal selector */
+     *{
+      font-family: 'josefin_sans';
+      scroll-behavior: smooth;
+      scroll-margin-top: 10vh;
+     }
+    /* Apply the font family to the whole webpage */
+
+    /* Link Second font family for the headings */
+    /* This font family we use in the webpage for the headings */
+     @font-face {
+      font-family: 'bebas_neue';
+      src: url(/Font/Bebas_Neue/BebasNeue-Regular.ttf);
+     }
+    /* Link Second font family for the headings */
+
+    /* Apply heading font family */
+    /* apply the font family with class */
+     .heading-txt{
+      font-family: 'bebas_neue';
+     }
+    /* Apply heading font family */
+
+    /* anchor tag hover effect */
+     .navbar .right-nav a{
+      position: relative;
+     }
+
+     .navbar .right-nav a::before{
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #ff3334;
+      margin-top: 17px;
+      transition: 0.55s;
+     }
+
+     .navbar .right-nav a:hover::before{
+      width: 100%;
+     }
+    /* anchor tag hover effect */
+
+    /* animation for the sliding effect */
+     @keyframes slide {
+        0%{
+          transform: translatex(0);
+        }
+        100%{
+          transform: translatex(-100%);
+        }
+     }
+    /* animation for the sliding effect */
+
+    /* Dropdown menu transitions */
+     #d-menu {
+       transform: translateX(-100%);
+       transition: transform 0.5s ease-in-out;
+     }
+      
+     #d-menu.active {
+         transform: translateX(0);
+     }
+    /* Dropdown menu transitions */
+ </style>
+<!-- Some CSS for costomize classes -->
+
+<body class="bg-gradient-to-r from-[rgba(20,0,0,1)] via-[rgb(0,0,0)] to-[rgba(0,0,20,1)]">
+   <!-- Navigation Bar -->
+    <div class="navbar z-[5] fixed w-full h-[8vh] flex justify-between items-center bg-[rgb(0,0,0,0)] backdrop-blur-[5px] px-[5%] py-auto">
+      <!-- Left navigation bar - logo -->
+       <div class="left-nav w-auto h-[8vh] flex justify-start items-center uppercase text-white tracking-[0.15vw] text-[35px]">
+         <a href="#Home" class="heading-txt cursor-default"><span class="text-[#ff3334] heading-txt">r</span>utvik</a>
+       </div>
+      <!-- Left navigation bar - logo -->
+
+      <!-- Right Navigation Bar - Menu bar -->
+       <div class="right-nav w-auto h-[inherit] hidden md:flex justify-end items-center gap-[1.5vw]">
+         <a href="#Home" class="text-[#ff3334] text-[12.5px] font-bold tracking-[0.025vw] uppercase">Home</a>
+         <a href="#About" class="text-[white] hover:text-[#ff3334] duration-[0.5s] text-[12.5px] font-semibold tracking-[0.025vw] uppercase">about me</a>
+         <a href="#Skill" class="text-[white] hover:text-[#ff3334] duration-[0.5s] text-[12.5px] font-semibold tracking-[0.025vw] uppercase">skills</a>
+         <a href="#Project" class="text-[white] hover:text-[#ff3334] duration-[0.5s] text-[12.5px] font-semibold tracking-[0.025vw] uppercase">projects</a>
+         <a href="#Contact" class="text-[white] hover:text-[#ff3334] duration-[0.5s] text-[12.5px] font-semibold tracking-[0.025vw] uppercase">contact me</a>
+       </div>
+      <!-- Right Navigation Bar - Menu bar -->
+
+      <!-- menu button -->
+       <div id="menu-btn" class="menu-btn w-auto h-[inherit] flex md:hidden justify-center items-center">
+         <img id="menu-btn" src="/Asstes/menu.png" class="w-[30px] cursor-pointer hover:scale-[1.1] duration-[0.5s]">
+       </div>
+      <!-- menu button -->
+    </div>
+   <!-- Navigation Bar -->
+
+   <!-- Dropdown menu for the mobile screen -->
+    <div id="d-menu" class="drop-down md:hidden w-[60%] h-auto bg-[rgba(0,0,0,0.5)] backdrop-blur-[7.5px] rounded-se-[25px] rounded-ee-[25px] z-[10] flex flex-col justify-center items-center gap-[4vh] pt-[10vh] pb-[5vh] absolute top-[8vh] left-0">
+      <!-- Anchor tags of the dropdown menu -->
+       <a href="#Home" class="w-[50%] h-[4vh] rounded-se-[1.5vh] rounded-es-[1.5vh] border-[1px] border-[#ff3334] text-[15px] tracking-[0.5px] font-light text-[white] flex justify-center items-center hover:bg-[#ff3334] hover:text-[black] hover:font-normal duration-[0.5s]">Home</a>
+       <a href="#About" class="w-[50%] h-[4vh] rounded-se-[1.5vh] rounded-es-[1.5vh] border-[1px] border-[#ff3334] text-[15px] tracking-[0.5px] font-light text-[white] flex justify-center items-center hover:bg-[#ff3334] hover:text-[black] hover:font-normal duration-[0.5s]">About Me</a>
+       <a href="#skill" class="w-[50%] h-[4vh] rounded-se-[1.5vh] rounded-es-[1.5vh] border-[1px] border-[#ff3334] text-[15px] tracking-[0.5px] font-light text-[white] flex justify-center items-center hover:bg-[#ff3334] hover:text-[black] hover:font-normal duration-[0.5s]">Skills</a>
+       <a href="#Project" class="w-[50%] h-[4vh] rounded-se-[1.5vh] rounded-es-[1.5vh] border-[1px] border-[#ff3334] text-[15px] tracking-[0.5px] font-light text-[white] flex justify-center items-center hover:bg-[#ff3334] hover:text-[black] hover:font-normal duration-[0.5s]">Projects</a>
+       <a href="#Contact" class="w-[50%] h-[4vh] rounded-se-[1.5vh] rounded-es-[1.5vh] border-[1px] border-[#ff3334] text-[15px] tracking-[0.5px] font-light text-[white] flex justify-center items-center hover:bg-[#ff3334] hover:text-[black] hover:font-normal duration-[0.5s]">Contact Me</a>
+       <img id="close-btn" src="/Asstes/close.png" class="absolute z-[10] top-[2.5vh] end-[12.5%] w-[30px] hover:rotate-[90deg] duration-[0.5s]">
+      <!-- Anchor tags of the dropdown menu -->
+    </div>
+   <!-- Dropdown menu for the mobile screen -->
+
+   <!-- Section 01 -->
+    <div id="Home" class="section01 w-full h-auto px-[5%] pt-[10vh] pb-[2vh] grid grid-cols-1 lg:grid-cols-3">
+      <!-- First Image of the section 01 -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="w-full h-auto">
+          <img src="/Asstes/avatar.png" class="w-[75%] md:w-[60%] lg:w-full object-cover">
+       </div>
+      <!-- First Image of the section 01 -->
+
+      <!-- Text area of the section 01 -->
+       <div data-aos="fade-right" data-aos-duration="1000" class="text w-full h-auto col-span-1 bg-[rgba(25,25,25,0.25)] backdrop-blur-[10px] rounded-[25px] lg:col-span-2 px-[10%] py-[2.5vh] flex flex-col justify-center items-start gap-[0.75vh] lg:gap-[1.5vh] cursor-default">
+         <!-- Greeting text -->
+          <h1 class="text-[15px] md:text-[20px] text-[rgb(255,255,255)] font-normal tracking-[0.05vw]">Hi there !</h1>
+         <!-- Greeting text -->
+
+         <!-- Name & Passion text -->
+          <h1 class="heading-txt text-[#ff3334] text-[30px] leading-[35px] md:text-[50px] md:leading-[60px] me-[20%] text-left"><span class="text-white">I'm</span> Rutvik Bhatti <span class="text-white">a passionate</span> WEB DEVELOPER. </h1>
+         <!-- Name & Passion text -->
+
+         <!-- Paragraph text -->
+          <p class="text-white font-normal text-[20px] md:text-[25px] text-left mt-[2.5vh]">Building the <span class="text-[#ff3334]">Web</span>, One Pixel at a Time !</p>
+          <p class="text-white font-normal text-[20px] md:text-[25px] text-left">Where <span class="text-[#ff3334]">creativity</span> meets <span class="text-[#ff3334]">functionality</span>. Let’s create web solutions that stand out. more like this</p>
+         <!-- Paragraph text -->
+          
+         <!-- Download CV button -->
+          <div class="cv-btn w-auto h-auto mt-[2.5vh]">
+            <a href="https://drive.google.com/file/d/1kXt9IgXXJwOEpdgfZOr6dxlwSlQC7vke/view?usp=sharing" target="_blank">
+              <div class="w-auto h-[3.75vh] md:h-[5vh] flex justify-center items-center rounded-[1vh] md:rounded-[1.5vh] border-[1px] border-[#ff3334] px-[1.5vw] text-[7.5px] md:text-[12.5px] text-white uppercase hover:shadow-[0_0_5px_0px_#ff3334] hover:scale-[1.025] hover:bg-[#ff3334] hover:text-black hover:font-bold duration-[0.5s]">
+                download my cv
+              </div>
+            </a>
+          </div>
+         <!-- Download CV button -->
+       </div>
+      <!-- Text area of the section 01 -->
+    </div>
+   <!-- Section 01 -->
+
+   <!-- Section 02 -->
+    <div id="About" class="section02 w-full h-auto grid grid-cols-1 lg:grid-cols-2 gap-[2.5vh] lg:gap-[5vw] px-[7.5%] py-[2vh]">
+      <!-- Heading text of the section -->
+       <div class="w-full h-auto col-span-1 lg:col-span-2 heading-txt flex justify-center items-center text-white tracking-[0.25vw] text-[50px] md:text-[75px]"><span class="uppercase heading-txt text-[#ff3334]">a</span>bout &nbsp;<span class="uppercase heading-txt text-[#ff3334]">m</span>e</div>
+      <!-- Heading text of the section -->
+
+      <div data-aos="fade-right" data-aos-duration="1000"  class="w-full h-auto px-[5%] py-[1.5vh] flex flex-col justify-center items-start gap-[2vh] bg-[rgba(25,25,25,0.25)] backdrop-blur-[10px] rounded-[25px] shadow-[0_0_7.5px_0_#ff3334]">
+        <!-- Heading text -->
+         <div class="w-full h-auto text-[#ff3334] tracking-[0.1vw] font-normal heading-txt text-[20px] md:text-[30px] flex justify-start ms-[1.25%] items-center hover:scale-[1.05] duration-[0.5s]">personal info</div>
+        <!-- Heading text -->
+
+        <!-- Table for information -->        
+         <table class="text-white text-[15px] hover:scale-[1.05] duration-[0.5s]" cellpadding="5px">
+          <tr>
+            <td class="font-semibold">Name</td>
+            <td class="text-[rgb(220,220,220)]">: Rutvik Bhatti</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">DOB</td>
+            <td class="text-[rgb(220,220,220)]">: May 3rd, 2004</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Age</td>
+            <td class="text-[rgb(220,220,220)]">: 21</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Degree</td>
+            <td class="text-[rgb(220,220,220)]">: Bachlore in Computer Application</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Mail</td>
+            <td class="text-[rgb(220,220,220)]">: <a href="mailto:rutvikbhatti0727@gmail.com">rutvikbhatti0727@gmail.com</a></td>
+          </tr>
+         </table>
+        <!-- Table for information -->
+
+        <!-- Heading text -->
+         <div class="w-full h-auto text-[#ff3334] tracking-[0.1vw] font-normal heading-txt text-[20px] md:text-[30px] flex justify-start ms-[1.25%] items-center hover:scale-[1.05] duration-[0.5s] mt-[2.5vh]">education</div>
+        <!-- Heading text -->
+
+        <!-- Table for information -->        
+        <table class="text-white text-[15px] hover:scale-[1.05] duration-[0.5s]" cellpadding="5px">
+          <tr>
+            <td class="font-semibold">Bachlore</td>
+            <td class="text-[rgb(220,220,220)]">: Bhagwaan Mahveer University - Surat</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">CGPA</td>
+            <td class="text-[rgb(220,220,220)]">: 6.9</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Higher Sec. Edu.</td>
+            <td class="text-[rgb(220,220,220)]">: KCK Higher Secondary School - Surat</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Percentage</td>
+            <td class="text-[rgb(220,220,220)]">: 72%</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Secondary Edu.</td>
+            <td class="text-[rgb(220,220,220)]">: Swaminaray Gurukul - Taravada</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">Percentage</td>
+            <td class="text-[rgb(220,220,220)]">: 78%</td>
+          </tr>
+         </table>
+        <!-- Table for information -->
+      </div>
+
+      <!-- Image of the section 02 -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="w-full h-auto flex justify-center items-center">
+         <img src="/Asstes/about_me.png" class="w-[75%] md:w-[75%] lg:w-full object-cover">
+       </div>
+       <!-- Image of the section 02 -->
+    </div>
+   <!-- Section 02 -->
+
+   <!-- Section 03 -->
+    <div id="Skill" class="section03 w-full h-auto px-[5%] grid gap-[2.5vh] py-[2vh]">
+      <!-- Heading text of the section -->
+       <div class="w-full h-auto heading-txt mt-[8vh] flex justify-center items-center text-white tracking-[0.25vw] text-[50px] md:text-[75px]"><span class="uppercase heading-txt text-[#ff3334]">S</span>kills</div>
+      <!-- Heading text of the section -->
+       
+      <!-- sliding effectin the section 03 for skills -->
+       <div class="slider overflow-hidden w-full bg-[rgba(25,25,25,0.25)] p-4 shadow-[0_0_5px_0_#ff3334] mt-[10px] rounded-[2vh]">
+          <!-- Sliding box -->
+           <div class="flex gap-[2.5vw] whitespace-nowrap animate-[slide_30s_linear_infinite]">
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+               
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+
+              <!-- Box 01 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/HTML.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">HTML</h1>
+               </div>
+              <!-- Box 01 -->
+               
+              <!-- Box 02 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/CSS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">CSS</h1>
+               </div>
+              <!-- Box 02 -->
+
+              <!-- Box 03 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/BS.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Bootstrap</h1>
+               </div>
+              <!-- Box 03 -->
+
+              <!-- Box 04 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/TC.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">TailwindCSS</h1>
+               </div>
+              <!-- Box 04 -->
+
+              <!-- Box 05 -->
+               <div class="box w-auto h-auto rounded-[2vh] bg-[rgba(0,0,0,0)] backdrop-blur-[15px] flex flex-col justify-center items-center gap-[1.5vh]">
+                  <img src="/Asstes/canva.png" class="w-[75px]">
+                  <h1 class="text-white text-[15px] font-bold">Canva</h1>
+               </div>
+              <!-- Box 05 -->
+           </div>
+          <!-- Sliding box -->
+       </div>
+      <!-- sliding effectin the section 03 for skills -->
+    </div>
+   <!-- Section 03 -->
+
+   <!-- Section 04 -->
+    <div id="Project" class="section04 w-full h-auto grid grid-cols-1 lg:grid-cols-2 px-[5%] py-[2vh] md:gap-[5vw] gap-[2.5vh]">
+      <!-- Heading text of the section -->
+      <div data-aos="zoom-in" data-aos-duration="1000" class="w-full h-auto heading-txt mt-[8vh] col-span-1 lg:col-span-2 flex justify-center items-center text-white tracking-[0.25vw] text-[50px] md:text-[75px]"><span class="uppercase heading-txt text-[#ff3334]">p</span>rojects</div>
+      <!-- Heading text of the section -->
+
+      <!-- Box 01 -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="box01 w-full h-auto rounded-[15px] shadow-[0_0_7.5px_0_#ff3334] px-[5%] py-[5vh] flex flex-col justify-center items-start gap-[1.5vh]">
+          <!-- Project 01 Logo -->
+           <div class="img w-full h-auto relative overflow-hidden">
+            <img src="/Asstes/cssshadow.png" class="w-full rounded-[15px]">
+            <div class="w-full h-full absolute rounded-[15px] top-0 left-0 opacity-0 hover:opacity-100 duration-[0.5s] flex justify-center items-center bg-[rgba(0,0,0,0.1)] backdrop-blur-[1px]">
+               <a href="https://customize-shadow.vercel.app/" target="_blank" class="w-[25%] h-[4vh] rounded-[1.5vh] flex justify-center items-center text-[white] bg-[#ff3334] border-[1px] border-[#ff3334]"> View Project</a>
+            </div>
+           </div>
+          <!-- Project 01 Logo -->
+
+          <!-- Project 01 heading -->
+            <a href="https://customize-shadow.vercel.app/" target="_blank"><div class="w-full h-auto text-[#ff3334] tracking-[0.05vw] font-normal heading-txt text-[17.5px] md:text-[25px] flex justify-start items-center hover:scale-[1.05] duration-[0.5s]">customize box shadow</div></a>
+          <!-- Project 01 heading -->
+
+          <!-- discription of the project -->
+            <p class="text-[white] text-[12.5px] font-semibold md:text-[17.5px] mt-[2.5vh]">Description :</p>
+            <p class="text-[rgb(220,220,220)] ms-[2.5vw] text-[10px] font-medium md:text-[15px]">A web app to create and customize CSS box-shadow effects with real-time previews and 30+ pre-designed styles.</p>
+            <p class="text-[rgb(220,220,220)] ms-[2.5vw] text-[10px] font-medium md:text-[15px]">Developed an interactive web app that allows users to design and customize CSS box-shadow effects. Features include real-time previews, 30+ pre-designed styles, adjustable shadow properties (e.g., blur, spread, color), and a one-click "Copy to Clipboard" functionality for the generated CSS code.</p>
+
+            <p class="text-[white] text-[12.5px] font-semibold md:text-[17.5px] mt-[2.5vh]">Technologies used :</p>
+            <p class="text-[rgb(220,220,220)] ms-[2.5vw] text-[10px] font-medium md:text-[15px]"> HTML, CSS, JavaScript</p>
+          <!-- discription of the project -->
+       </div>
+      <!-- Box 01 -->
+
+      <!-- Box 02 -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="box01 w-full h-auto rounded-[15px] shadow-[0_0_7.5px_0_#ff3334] px-[5%] py-[5vh] flex flex-col lg:justify-start justify-center items-start gap-[1.5vh]">
+          <!-- Project 01 Logo -->
+           <div class="img w-full h-auto relative overflow-hidden">
+            <img src="/Asstes/hetpatel.png" class="w-full rounded-[15px]">
+            <div class="w-full h-full absolute rounded-[15px] top-0 left-0 opacity-0 hover:opacity-100 duration-[0.75s] flex justify-center items-center bg-[rgba(0,0,0,0.1)] backdrop-blur-[1px]">
+               <a href="https://hetpatel-portfolio.vercel.app/" target="_blank" class="w-[25%] h-[4vh] rounded-[1.5vh] flex justify-center items-center text-[white] bg-[#ff3334] border-[1px] border-[#ff3334]">View Project</a>
+            </div>
+           </div>
+          <!-- Project 01 Logo -->
+
+          <!-- Project 01 heading -->
+            <a href="https://hetpatel-portfolio.vercel.app/" target="_blank"><div class="w-full h-auto text-[#ff3334] tracking-[0.05vw] font-normal heading-txt text-[17.5px] md:text-[25px] flex justify-start items-center hover:scale-[1.05] duration-[0.5s]">het patel's portfolio</div></a>
+          <!-- Project 01 heading -->
+
+          <!-- discription of the project -->
+            <p class="text-[white] text-[12.5px] font-semibold md:text-[17.5px] mt-[2.5vh]">Description :</p>
+            <p class="text-[rgb(220,220,220)] ms-[2.5vw] text-[10px] font-medium md:text-[15px]">A personal portfolio website showcasing Het Patel's skills, education, experience, and projects as a Software Engineer and Backend Developer. The website is designed to provide visitors with a detailed overview of his professional profile and work.</p>
+
+            <p class="text-[white] text-[12.5px] font-semibold md:text-[17.5px] mt-[2.5vh]">Technologies used :</p>
+            <p class="text-[rgb(220,220,220)] ms-[2.5vw] text-[10px] font-medium md:text-[15px]"> HTML, CSS, JavaScript</p>
+          <!-- discription of the project -->
+       </div>
+      <!-- Box 02 -->
+    </div>
+   <!-- Section 04 -->
+
+   <!-- Section 05 -->
+    <div id="Contact" class="section05 w-full h-auto px-[5%] py-[2vh]">
+      <!-- Heading text of the section -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="w-full h-auto heading-txt mt-[8vh] col-span-1 lg:col-span-2 flex justify-center items-center text-white tracking-[0.25vw] text-[50px] md:text-[75px]"><span class="uppercase heading-txt text-[#ff3334]">c</span>ontact &nbsp;<span class="uppercase heading-txt text-[#ff3334]">m</span>e</div>
+      <!-- Heading text of the section -->
+
+      <!-- Contact me form -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="form w-full h-auto px-[25%] mt-[2.5vh] flex flex-col gap-[2.5vh]">
+        <form>
+          <div class="name w-full h-auto">
+            <label for="name" class="w-full text-white text-[15px] md:text-[17.5px] tracking-[0.025vw]">Name*</label>
+            <input type="text" id="name" name="name" required class="w-full bg-[rgba(0,0,0,0)] hover:border-b-[3px] duration-[0.5s] h-[5vh] border-b-[1px] border-[#ff3334] mt-[1.5vh]">
+          </div>
+
+          <div class="email w-full h-auto mt-[5vh]">
+            <label for="email" class="w-full text-white text-[15px] md:text-[17.5px] tracking-[0.025vw]">Email*</label>
+            <input type="email" id="email" name="email" required class="w-full bg-[rgba(0,0,0,0)] hover:border-b-[3px] duration-[0.5s] h-[5vh] border-b-[1px] border-[#ff3334] mt-[1.5vh]">
+          </div>
+
+          <div class="phone w-full h-auto mt-[5vh]">
+            <label for="phone" class="w-full text-white text-[15px] md:text-[17.5px] tracking-[0.025vw]">Contact No.*</label>
+            <input type="number" id="phone" name="phone" required class="w-full bg-[rgba(0,0,0,0)] hover:border-b-[3px] duration-[0.5s] h-[5vh] border-b-[1px] border-[#ff3334] mt-[1.5vh]">
+          </div>
+
+          <div class="add w-full h-auto mt-[5vh]">
+            <label for="add" class="w-full text-white text-[15px] md:text-[17.5px] tracking-[0.025vw]">Address</label>
+            <input type="text" id="add" name="add" class="w-full bg-[rgba(0,0,0,0)] hover:border-b-[3px] duration-[0.5s] h-[5vh] border-b-[1px] border-[#ff3334] mt-[1.5vh]">
+          </div>
+
+          <button class="submit w-[75%] h-[3.5vh] md:h-[5vh] rounded-[1vh] md:rounded-[1.5vh] border-[1px] border-[#ff3334] bg-[#ff3334] text-[black] font-semibold text-[12.5px] md:text-[17.5px] uppercase mt-[5vh] ms-[12.5%] hover:text-white hover:bg-[rgba(0,0,0,0)] duration-[0.5s]"> submit </button>
+        </form>
+       </div>
+      <!-- Contact me form -->
+
+      <!-- Social profiles -->
+       <div data-aos="zoom-in" data-aos-duration="1000" class="social mt-[10vh] w-full flex justify-center items-center gap-[2.5vw]">
+        <a href="https://github.com/rutvik1503" target="_blank" class="text-[20px] text-white">GitHub</a> <a class="text-[20px] text-white">|</a> <a href="https://www.linkedin.com/in/rutvik-bhatti-981032341/" target="_blank" class="text-[20px] text-white">LinkedIn</a>
+       </div>
+      <!-- Social profiles -->
+    </div>
+   <!-- Section 05 -->
+
+   <!-- Footer section -->
+    <div class="footer w-full h-auto px-[15%] py-[2.5vh] text-white text-[10px] md:text-[15px] font-normal text-center">
+      Copyright©2024 All Rights Reserved. Developed By <span class="text-[#ff3334] border-b-[1px] border-b-[#ff3334] font-semibold"><a href="https://www.linkedin.com/in/rutvik-bhatti-981032341/">Rutvik Bhatti</a></span>
+    </div>
+   <!-- Footer section -->
+</body>
+
+<!-- Data AOS JS CDN For the animation -->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script>
+   AOS.init();
+ </script>
+<!-- Data AOS JS CDN For the animation -->
+
+<!-- Link the java script file to add click functionality -->
+ <script src="/script.js"></script>
+<!-- Link the java script file to add click functionality -->
+
+</html>
